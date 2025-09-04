@@ -59,7 +59,6 @@
       <h2 class="text-2xl font-semibold">Termin-Anfrage</h2>
       <p class="text-sm text-gray-600 mt-1">Füllen Sie das Formular aus – wir melden uns zurück.</p>
 
-      <!-- Formspree: можно использовать твой текущий endpoint; при желании создадим отдельный -->
       <form class="mt-4 grid gap-4" action="https://formspree.io/f/xwpnoled" method="POST">
         <input class="p-3 border rounded-xl" name="name" placeholder="Name" required />
         <input class="p-3 border rounded-xl" name="phone" placeholder="Telefon (optional)" />
@@ -69,7 +68,7 @@
         <!-- anti-spam -->
         <input type="text" name="_gotcha" style="display:none" />
         <!-- redirect -->
-        <input type="hidden" name="_next" value="https://YOUR-USERNAME.github.io/wislig-coiffeur/?success=1" />
+        <input type="hidden" name="_next" value="https://aleksey1278.github.io/wislig-coiffeur/?success=1" />
 
         <button class="px-6 py-3 bg-black text-white rounded-xl">Senden</button>
       </form>
