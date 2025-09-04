@@ -4,37 +4,64 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Wislig Coiffeur – Ihr Coiffeur in Weisslingen</title>
-  <meta name="description" content="Wislig Coiffeur in Weisslingen: Herren-, Damen- und Kinderhaarschnitte. Schnelle Kontaktaufnahme und einfache Termin-Anfrage." />
+  <meta name="description" content="Wislig Coiffeur in Weisslingen: Herren-, Damen- und Kinderhaarschnitte. Schnelle Kontaktaufnahme, Online-Anfrage, Karte & Öffnungszeiten." />
   <!-- скрываем демо от поисковиков -->
   <meta name="robots" content="noindex,nofollow" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>html{scroll-behavior:smooth}</style>
 </head>
 <body class="min-h-screen bg-gray-50 text-gray-900">
-  <!-- HERO -->
-  <header class="max-w-5xl mx-auto p-6 text-center">
-    <h1 class="text-3xl md:text-4xl font-bold">Wislig Coiffeur</h1>
-    <p class="mt-2 md:text-lg">Ihr Coiffeur in Weisslingen</p>
-
-    <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
-      <!-- DEMO-режим: без звонков -->
-      <a href="#" onclick="alert('Demo only');return false;"
-         class="inline-block px-6 py-3 bg-green-600 text-white rounded-xl shadow hover:opacity-90 transition">
-        WhatsApp buchen
-      </a>
-      <a href="#" onclick="alert('Demo only');return false;"
-         class="inline-block px-6 py-3 bg-black text-white rounded-xl shadow hover:opacity-90 transition">
-        Anrufen
-      </a>
-      <!-- CRM Demo -->
-      <a href="https://artistic-flavor-b4f.notion.site/685f78d93ada47039baaeb39a8613737?v=024c290623564afb889a0274a5318956"
-         target="_blank" rel="noopener noreferrer"
-         class="inline-block px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:opacity-90 transition">
-        CRM Demo (Notion)
-      </a>
-    </div>
+  <!-- HERO with image -->
+  <header class="max-w-5xl mx-auto p-6">
+    <section class="relative overflow-hidden rounded-2xl shadow">
+      <img
+        src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1800&auto=format&fit=crop"
+        alt="Friseursalon – Haare & Styling"
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
+      />
+      <div class="relative bg-black/50 p-8 md:p-12 text-white">
+        <h1 class="text-3xl md:text-5xl font-bold">Wislig Coiffeur</h1>
+        <p class="mt-2 md:mt-3 text-lg md:text-xl">Ihr Coiffeur in Weisslingen</p>
+        <div class="mt-5 flex flex-wrap items-center gap-3">
+          <!-- DEMO-режим: без звонков -->
+          <a href="#" onclick="alert('Demo only');return false;"
+             class="inline-block px-5 py-3 bg-green-600 rounded-xl shadow hover:opacity-90 transition"
+             aria-label="WhatsApp Kontakt (Demo)">
+            WhatsApp
+          </a>
+          <a href="#" onclick="alert('Demo only');return false;"
+             class="inline-block px-5 py-3 bg-black rounded-xl shadow hover:opacity-90 transition"
+             aria-label="Anrufen (Demo)">
+            Anrufen
+          </a>
+          <a href="#anfrage"
+             class="inline-block px-5 py-3 bg-white text-gray-900 rounded-xl shadow hover:opacity-90 transition"
+             aria-label="Zum Anfrage-Formular scrollen">
+            Termin anfragen
+          </a>
+          <a href="https://artistic-flavor-b4f.notion.site/685f78d93ada47039baaeb39a8613737?v=024c290623564afb889a0274a5318956"
+             target="_blank" rel="noopener noreferrer"
+             class="inline-block px-5 py-3 bg-blue-600 rounded-xl shadow hover:opacity-90 transition">
+            CRM Demo
+          </a>
+        </div>
+      </div>
+    </section>
   </header>
 
   <main class="max-w-5xl mx-auto p-6 space-y-12">
+
+    <!-- Über uns -->
+    <section class="p-6 bg-white rounded-2xl shadow">
+      <h2 class="text-2xl font-semibold">Über uns</h2>
+      <p class="mt-3 text-gray-700 leading-relaxed">
+        Traditionelles Handwerk, klare Schnitte und freundlicher Service – ohne Stress.
+        Termine können schnell per WhatsApp oder über das Anfrage-Formular angefragt werden.
+        Anfragen landen automatisch im System – kein Notizbuch mehr.
+      </p>
+    </section>
+
     <!-- Leistungen & Preise -->
     <section class="p-6 bg-white rounded-2xl shadow">
       <h2 class="text-2xl font-semibold">Leistungen &amp; Preise</h2>
@@ -54,19 +81,48 @@
       </ul>
     </section>
 
+    <!-- Öffnungszeiten + Open now -->
+    <section class="p-6 bg-white rounded-2xl shadow">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+        <h2 class="text-2xl font-semibold">Öffnungszeiten</h2>
+        <p id="openStatus" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-medium bg-gray-100">
+          <span class="inline-block w-2.5 h-2.5 rounded-full bg-gray-400" aria-hidden="true"></span>
+          <span>Wird geladen…</span>
+        </p>
+      </div>
+      <div class="mt-4 grid gap-2 text-sm text-gray-700 md:grid-cols-2">
+        <p><span class="font-medium">Mo–Fr:</span> 09:00–18:00</p>
+        <p><span class="font-medium">Sa:</span> 09:00–14:00</p>
+        <p><span class="font-medium">So:</span> geschlossen</p>
+        <p class="text-gray-500">Zeiten beispielhaft · anpassbar</p>
+      </div>
+    </section>
+
     <!-- Anfrage-Formular -->
     <section id="anfrage" class="p-6 bg-white rounded-2xl shadow">
       <h2 class="text-2xl font-semibold">Termin-Anfrage</h2>
       <p class="text-sm text-gray-600 mt-1">Füllen Sie das Formular aus – wir melden uns zurück.</p>
 
-      <form class="mt-4 grid gap-4" action="https://formspree.io/f/xwpnoled" method="POST">
-        <input class="p-3 border rounded-xl" name="name" placeholder="Name" required />
-        <input class="p-3 border rounded-xl" name="phone" placeholder="Telefon (optional)" />
-        <input class="p-3 border rounded-xl" type="email" name="email" placeholder="E-Mail" required />
-        <textarea class="p-3 border rounded-xl" name="message" placeholder="Wunschtermin / Nachricht" required></textarea>
+      <form class="mt-4 grid gap-4" action="https://formspree.io/f/xwpnoled" method="POST" aria-label="Anfrage-Formular">
+        <label class="grid gap-1">
+          <span class="text-sm text-gray-600">Name</span>
+          <input class="p-3 border rounded-xl" name="name" placeholder="Name" required />
+        </label>
+        <label class="grid gap-1">
+          <span class="text-sm text-gray-600">Telefon (optional)</span>
+          <input class="p-3 border rounded-xl" name="phone" placeholder="Telefon" />
+        </label>
+        <label class="grid gap-1">
+          <span class="text-sm text-gray-600">E-Mail</span>
+          <input class="p-3 border rounded-xl" type="email" name="email" placeholder="E-Mail" required />
+        </label>
+        <label class="grid gap-1">
+          <span class="text-sm text-gray-600">Wunschtermin / Nachricht</span>
+          <textarea class="p-3 border rounded-xl" name="message" placeholder="Wunschtermin / Nachricht" required></textarea>
+        </label>
 
         <!-- anti-spam -->
-        <input type="text" name="_gotcha" style="display:none" />
+        <input type="text" name="_gotcha" style="display:none" aria-hidden="true" />
         <!-- redirect -->
         <input type="hidden" name="_next" value="https://aleksey1278.github.io/wislig-coiffeur/?success=1" />
 
@@ -75,9 +131,12 @@
 
       <!-- Уведомление об успехе -->
       <script>
-        if (new URLSearchParams(location.search).get('success') === '1') {
-          document.write('<p class="mt-3 text-green-700">Danke! Ihre Anfrage wurde gesendet.</p>');
-        }
+        (function(){
+          const ok = new URLSearchParams(location.search).get('success') === '1';
+          if(ok){
+            document.write('<p class="mt-3 text-green-700">Danke! Ihre Anfrage wurde gesendet.</p>');
+          }
+        })();
       </script>
     </section>
 
@@ -96,7 +155,8 @@
             loading="lazy"
             allowfullscreen
             referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=R%C3%B6ssligasse%202,%208484%20Weisslingen&output=embed">
+            src="https://www.google.com/maps?q=R%C3%B6ssligasse%202,%208484%20Weisslingen&output=embed"
+            title="Karte – Wislig Coiffeur">
           </iframe>
         </div>
       </div>
@@ -111,6 +171,65 @@
     </footer>
   </main>
 
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <!-- Mobile sticky CTA -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-white/90 backdrop-blur border-t shadow">
+    <div class="grid grid-cols-3 gap-2">
+      <a href="#" onclick="alert('Demo only');return false;" class="px-3 py-2 rounded-lg bg-green-600 text-white text-center">WhatsApp</a>
+      <a href="#" onclick="alert('Demo only');return false;" class="px-3 py-2 rounded-lg bg-black text-white text-center">Anrufen</a>
+      <a href="#anfrage" class="px-3 py-2 rounded-lg bg-blue-600 text-white text-center">Termin</a>
+    </div>
+  </div>
+
+  <script>
+    // Jahr im Footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Open-now indicator (Europe/Zurich)
+    (function(){
+      const tz = 'Europe/Zurich';
+      const dayShort = new Intl.DateTimeFormat('en-GB', { timeZone: tz, weekday: 'short' }).format(new Date());
+      const map = { Sun:0, Mon:1, Tue:2, Wed:3, Thu:4, Fri:5, Sat:6 };
+      const day = map[dayShort] ?? new Date().getDay();
+
+      // Öffnungszeiten (Mo–Fr 09:00–18:00, Sa 09:00–14:00, So geschlossen)
+      const schedule = {
+        1:['09:00','18:00'],
+        2:['09:00','18:00'],
+        3:['09:00','18:00'],
+        4:['09:00','18:00'],
+        5:['09:00','18:00'],
+        6:['09:00','14:00'],
+        0:null
+      };
+
+      // текущее время в Цюрихе HH:MM (24h)
+      const timeStr = new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date());
+      const [hh, mm] = timeStr.split(':').map(Number);
+      const nowMinutes = hh*60 + mm;
+
+      const el = document.getElementById('openStatus');
+      const dot = el.querySelector('span:first-child');
+      const label = el.querySelector('span:last-child');
+
+      const hours = schedule[day];
+      if(!hours){
+        dot.classList.remove('bg-gray-400'); dot.classList.add('bg-red-600');
+        label.textContent = 'Heute geschlossen';
+        return;
+      }
+      const [from, to] = hours;
+      const f = from.split(':').map(Number), t = to.split(':').map(Number);
+      const fromMin = f[0]*60 + f[1], toMin = t[0]*60 + t[1];
+
+      const open = nowMinutes >= fromMin && nowMinutes < toMin;
+      if(open){
+        dot.classList.remove('bg-gray-400'); dot.classList.add('bg-green-600');
+        label.textContent = `Jetzt geöffnet · heute ${from}–${to}`;
+      }else{
+        dot.classList.remove('bg-gray-400'); dot.classList.add('bg-red-600');
+        label.textContent = `Jetzt geschlossen · heute ${from}–${to}`;
+      }
+    })();
+  </script>
 </body>
 </html>
